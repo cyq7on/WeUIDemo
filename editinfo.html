@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>编辑信息</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/weui/0.4.3/style/weui.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/jquery-weui/0.8.2/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        .head {
+            width: 30%;
+            height: 20%;
+            border-radius: 50%;
+            margin-left: 35%;
+            margin-top: 20%;
+        }
+        .weui_uploader_input {
+            width: 100% ;
+            height: 20%;
+            padding-top: 20%;
+        }
+    </style>
+</head>
+<body ontouchstart>
+<img class="head" id="previewer">
+<input class="weui_uploader_input" id="filechooser" type="file" value="更换头像"
+       accept="image/jpg,image/jpeg,image/png,image/gif">
+<a class="weui_btn weui_btn_primary" id="change" >更改</a>
+<a class="weui_btn weui_btn_primary" id="cancel">取消</a>
+<script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/jquery-weui/0.8.2/js/jquery-weui.min.js"></script>
+<script src="js/common.js"></script>
+<script>
+    $().ready(function () {
+        var result;
+        var filechooser = $("#filechooser");
+        var previewer = $("#previewer");
+        var url = sessionStorage.getItem("head");
+        previewer.attr("src",url);
+        filechooser.change(function () {
+            var files = this.files;
+            var file = files[0];
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function() {
+                result = this.result;
+                previewer.attr("src",result);
+                sessionStorage.setItem("head",result);
+                // 清空图片上传框的值
+//                filechooser.value = '';
+            };
+        });
+
+        $("#change").on("click",function () {
+            if (result) {
+//                history.go(-1);
+                location.href = "me.html";
+            }else {
+                $.toptip('没有做出任何修改', 'warning');
+            }
+        });
+        $("#cancel").on("click",function () {
+            history.back();
+        });
+    })
+</script>
+</body>
+</html>

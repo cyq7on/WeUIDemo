@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>首页</title>
+    <link rel="stylesheet" href="//cdn.bootcss.com/weui/0.4.3/style/weui.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/jquery-weui/0.8.0/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.0.0/css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body ontouchstart>
+<div class="weui_tab">
+    <div class="weui_tab_bd">
+        <!--下拉刷新控件-->
+        <div class="weui-pull-to-refresh-layer">
+            <div class="pull-to-refresh-arrow"></div>
+            <div class="pull-to-refresh-preloader"></div>
+            <div class="down">下拉刷新</div>
+            <div class="up">释放刷新</div>
+            <div class="refresh">正在刷新...</div>
+        </div>
+        <!--Swiper-->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="img/s1.jpg" alt="" style="width: 100%;height: 100%">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/s2.png" alt="" style="width: 100%;height: 100%">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/s3.png" alt="" style="width: 100%;height: 100%">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/s4.png" alt="" style="width: 100%;height: 100%">
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+        <div  id="content">
+        </div>
+        <!--<div id="tab1" class="weui_tab_bd_item weui_tab_bd_item_active">-->
+            <!--&lt;!&ndash;<div  id="list">&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--</div>-->
+        <!--<div id="tab2" class="weui_tab_bd_item">-->
+            <!--<h1 class="doc-head">通讯录</h1>-->
+        <!--</div>-->
+        <!--<div id="tab3" class="weui_tab_bd_item">-->
+            <!--<h1 class="doc-head">发现</h1>-->
+        <!--</div>-->
+        <!--<div id="tab4" class="weui_tab_bd_item">-->
+            <!--<h1 class="doc-head">我的</h1>-->
+        <!--</div>-->
+
+        <!--滚动加载控件-->
+        <div class="weui-infinite-scroll">
+            <div class="infinite-preloader"></div>
+            正在加载...
+        </div>
+    </div>
+
+    <div class="weui_tabbar">
+        <a href="#" class="weui_tabbar_item weui_bar_item_on" data-selected="img/icon_shopping_mall_selected.png">
+            <div class="weui_tabbar_icon">
+                <img src="img/icon_shopping_mall_selected.png" alt="">
+            </div>
+            <p class="weui_tabbar_label">首页</p>
+        </a>
+        <a href="contact.html" class="weui_tabbar_item" data-selected="img/icon_alarm_information_selected.png">
+            <div class="weui_tabbar_icon">
+                <img src="img/icon_alarm_information_normal.png" alt="">
+            </div>
+            <p class="weui_tabbar_label">通讯录</p>
+        </a>
+        <a href="search.html" class="weui_tabbar_item" data-selected="img/icon_device_manager_selected.png">
+            <div class="weui_tabbar_icon">
+                <img src="img/icon_device_manager_normal.png" alt="">
+            </div>
+            <p class="weui_tabbar_label">发现</p>
+        </a>
+        <a href="me.html" class="weui_tabbar_item" data-selected="img/icon_my_selected.png">
+            <div class="weui_tabbar_icon">
+                <img src="img/icon_my_normal.png" alt="">
+            </div>
+            <p class="weui_tabbar_label">我</p>
+        </a>
+    </div>
+</div>
+<script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/jquery-weui/0.8.0/js/jquery-weui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.0.0/js/swiper.min.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>登录</title>
+    <link rel="stylesheet" href="//cdn.bootcss.com/weui/0.4.3/style/weui.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/jquery-weui/0.8.0/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body ontouchstart>
+<form id="submit" action="http://211.149.246.103:8080/LuZhouFire/login" method="post">
+<div class="weui_cells weui_cells_form">
+    <div class="weui_cell">
+        <div class="weui_cell_hd"><label class="weui_label">账号</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+            <input id="account" name="tel" class="weui_input" type="tel" placeholder="手机号/邮箱">
+        </div>
+    </div>
+</div>
+<div class="weui_cells weui_cells_form">
+    <div class="weui_cell">
+        <div class="weui_cell_hd"><label class="weui_label">密码</label></div>
+        <div class="weui_cell_bd weui_cell_primary">
+            <input id="password" name="password" class="weui_input" type="password" placeholder="密码">
+        </div>
+    </div>
+</div>
+</form>
+<a class="weui_btn weui_btn_primary" id="login">登录</a>
+<script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/jquery-weui/0.8.0/js/jquery-weui.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

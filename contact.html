@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>通讯录</title>
+    <link rel="stylesheet" href="//cdn.bootcss.com/weui/0.4.3/style/weui.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/jquery-weui/0.8.0/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body ontouchstart>
+<div class="weui_tab">
+    <div class="weui_tab_bd">
+        <div class="weui_cell weui_cell_warn">
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <div class="weui_uploader">
+                        <div class="weui_uploader_hd weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">图片上传</div>
+                            <div class="weui_cell_ft">0/0</div>
+                        </div>
+                        <div class="weui_uploader_bd">
+                            <ul class="weui_uploader_files">
+                                <!--<img class="weui_uploader_file">-->
+                                <!--&lt;!&ndash;<li class="weui_uploader_file" id="previewer"></li>&ndash;&gt;-->
+                                <!--<li class="weui_uploader_file" style="background-image:url(http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/)"></li>-->
+                                <!--<li class="weui_uploader_file" style="background-image:url(http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/)"></li>-->
+                                <!--<li class="weui_uploader_file weui_uploader_status" style="background-image:url(http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/)">-->
+                                    <!--<div class="weui_uploader_status_content">-->
+                                        <!--<i class="weui_icon_warn"></i>-->
+                                    <!--</div>-->
+                                <!--</li>-->
+                                <!--<li class="weui_uploader_file weui_uploader_status" style="background-image:url(http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/)">-->
+                                    <!--<div class="weui_uploader_status_content">50%</div>-->
+                                <!--</li>-->
+                            </ul>
+                            <div class="weui_uploader_input_wrp">
+                            <input class="weui_uploader_input" id="filechooser" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="multiple">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui_tabbar">
+        <a href="home.html" class="weui_tabbar_item " data-selected="img/icon_shopping_mall_selected.png">
+            <div class="weui_tabbar_icon">
+                <img src="img/icon_shopping_mall_normal.png" alt="">
+            </div>
+            <p class="weui_tabbar_label">首页</p>
+        </a>
+        <a href="#" class="weui_tabbar_item weui_bar_item_on" data-selected="img/icon_alarm_information_selected.png">
+            <div class="weui_tabbar_icon">
+                <img src="img/icon_alarm_information_selected.png" alt="">
+            </div>
+            <p class="weui_tabbar_label">通讯录</p>
+        </a>
+        <a href="search.html" class="weui_tabbar_item" data-selected="img/icon_device_manager_selected.png">
+            <div class="weui_tabbar_icon">
+                <img src="img/icon_device_manager_normal.png" alt="">
+            </div>
+            <p class="weui_tabbar_label">发现</p>
+        </a>
+        <a href="me.html" class="weui_tabbar_item" data-selected="img/icon_my_selected.png">
+            <div class="weui_tabbar_icon">
+                <img src="img/icon_my_normal.png" alt="">
+            </div>
+            <p class="weui_tabbar_label">我</p>
+        </a>
+    </div>
+</div>
+<script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/jquery-weui/0.8.0/js/jquery-weui.min.js"></script>
+<script>
+    $().ready(function () {
+        var filechooser = $("#filechooser");
+        filechooser.change(function () {
+           readFile(this.files);
+        });
+    })
+
+    function readFile(files) {
+        var result;
+        for (var i = 0; i < files.length; i++) {
+            var reader = new FileReader();
+            reader.readAsDataURL(files[i]);
+            reader.onload = function () {
+                result = '<img class="weui_uploader_file" src="'+ this.result+'">';
+                $(".weui_uploader_files").append(result);
+            }
+        }
+    }
+</script>
+</body>
+</html>
